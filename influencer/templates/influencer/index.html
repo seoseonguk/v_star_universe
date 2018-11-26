@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>App | Unify - Responsive Website Template</title>
+
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "assets/favicon.ico" %}">
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    {% include "influencer/base/css.html" %}
+
+    {% block css %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <main>
+
+        {% include "influencer/base/header.html" %}
+
+
+        {% include "influencer/sections/parallex.html" %}
+        {% include "influencer/sections/vision.html" %}
+        {% include "influencer/sections/items.html" %}
+        {% include "influencer/sections/review.html" %}
+        {% include "influencer/sections/strength.html" %}
+        {% include "influencer/sections/howtouse.html" %}
+        {% include "influencer/sections/client.html" %}
+        {% include "influencer/sections/register_modal.html" %}
+
+
+        {% include "influencer/base/footer.html" %}
+
+
+      <a class="js-go-to u-go-to-v1" href="#!"
+         data-type="fixed"
+         data-position='{
+           "bottom": 15,
+           "right": 15
+         }'
+         data-offset-top="400"
+         data-compensation="#js-header"
+         data-show-effect="zoomIn">
+        <i class="hs-icon hs-icon-arrow-top"></i>
+      </a>
+    </main>
+
+
+    {% include "influencer/base/javascript.html" %}
+    {% block javascript %}
+    {% endblock %}
+
+  </body>
+</html>

@@ -1,0 +1,140 @@
+{% load static %}
+
+      <!-- Demo modal window -->
+      <div id="register-modal" class="text-left g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+        <div class="g-max-width-00">
+        <button type="button" class="close" onclick="Custombox.modal.close();">
+          <i class="hs-icon hs-icon-close"></i>
+        </button>
+        <h4 class="g-mb-20">Register</h4>
+            <form class="g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30">
+              <!-- Columned Radios -->
+
+              <h4 class="h6 g-font-weight-700 g-mb-20">이름</h4>
+              <div class="form-group g-mb-20">
+                <input id="inputGroup1_1" class="form-control form-control-md rounded-0" type="text" placeholder="Enter your name">
+              </div>
+              
+              <h4 class="h6 g-font-weight-700 g-mb-20">이메일</h4>
+              <div class="form-group g-mb-20">
+                <input id="inputGroup1_1" class="form-control form-control-md rounded-0" type="email" placeholder="Enter email">
+                <small class="form-text text-muted g-font-size-default g-mt-10">We'll never share your email with anyone else.</small>
+              </div>
+
+              <h4 class="h6 g-font-weight-700 g-mb-20">성별</h4>
+              <div class="row g-mb-20">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                  <div class="form-group g-mb-0">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      남
+                    </label>
+                  </div>
+                </div>
+                <!-- End Left Column -->
+                <!-- Right Column -->
+                <div class="col-md-6">
+                  <div class="form-group g-mb-0">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      여
+                    </label>
+                  </div>
+                </div>
+                <!-- End Right Column -->
+              </div>
+
+              <h4 class="h6 g-font-weight-700 g-mb-20">지역</h4>
+              <div class="form-group g-mb-25">
+                <select class="form-control rounded-0" id="exampleSelect1">
+                  <option>호치민</option>
+                  <option>하노이</option>
+                  <option>다낭</option>
+                  <option>무이네</option>
+                  <option>꿘터</option>
+                </select>
+              </div>
+
+              <h4 class="h6 g-font-weight-700 g-mb-20">생년월일</h4>
+              <div class="form-group g-mb-20">
+                  <input class="form-control rounded-0 form-control-md" type="date" value="2011-08-19" id="example-date-input">
+              </div>
+ 
+              <h4 class="h6 g-font-weight-700 g-mb-20">팔로워수</h4>
+              <div class="row g-mb-20">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      ~ 1K
+                    </label>
+                  </div>
+                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      1 ~ 5K
+                    </label>
+                  </div>
+                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      5 ~ 10K
+                    </label>
+                  </div>
+                </div>
+                <!-- End Left Column -->
+                <!-- Right Column -->
+                <div class="col-md-6">
+                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      10K ~ 50K
+                    </label>
+                  </div>
+                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      50K ~ 100K
+                    </label>
+                  </div>                  <div class="form-group g-mb-10">
+                    <label class="u-check g-pl-25">
+                      <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio">
+                      <div class="u-check-icon-font g-absolute-centered--y g-left-0">
+                        <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+                      </div>
+                      100K ~
+                    </label>
+                  </div>
+                </div>
+                <!-- End Right Column -->
+              </div>
+              <a href="#!" class="btn btn-md u-btn-primary g-mr-10 g-mb-15">Register</a>
+
+            </form>
+          
+      </div>
+    </div>
+
