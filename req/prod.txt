@@ -4,6 +4,4 @@
 django-storages
 boto3
 pymysql
-psycopg2
-uwsgi
 raven
