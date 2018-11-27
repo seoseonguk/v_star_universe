@@ -21,7 +21,7 @@ DEBUG = False
 #     }
 # }
 
-INSTALLED_APPS += ['raven.contrib.django.raven_compat',]
+INSTALLED_APPS += ['sentry_sdk',]
 
 # STATICFILES_STORAGE = 'v_star_universe.storages.StaticS3Boto3Storage'
 # DEFAULT_FILE_STORAGE = 'v_star_universe.storages.MediaS3Boto3Storage'
@@ -33,16 +33,15 @@ INSTALLED_APPS += ['raven.contrib.django.raven_compat',]
 #
 #
 
-import os
-import raven
+import sentry_sdk
 
-if os.path.exists(os.path.join(BASE_DIR, '.git')):
-    release = raven.fetch_git_sha(BASE_DIR)
-else:
-    release = 'dev'
+from sentry_sdk.integrations.django import DjangoIntegration
 
-RAVEN_CONFIG = {
-    'dsn': 'https://cb9e8501742749f19194c202012012fc:45cb05d4a75647a58b5a32e06cd86274@sentry.io/1331352',
-    'release': release,
-}
+sentry_sdk.init(
+
+    dsn="https://cb9e8501742749f19194c202012012fc@sentry.io/1331352",
+
+    integrations=[DjangoIntegration()]
+
+)
 
