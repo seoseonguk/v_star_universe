@@ -21,7 +21,8 @@ DEBUG = False
 #     }
 # }
 
-# INSTALLED_APPS += ['storages']
+INSTALLED_APPS += ['raven.contrib.django.raven_compat',]
+
 # STATICFILES_STORAGE = 'v_star_universe.storages.StaticS3Boto3Storage'
 # DEFAULT_FILE_STORAGE = 'v_star_universe.storages.MediaS3Boto3Storage'
 
@@ -31,3 +32,14 @@ DEBUG = False
 # AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME', 'ap-northeast-2')
 #
 #
+
+import os
+import raven
+
+DSN_URL = 'https://cb9e8501742749f19194c202012012fc@sentry.io/1331352'
+
+
+RAVEN_CONFIG = {
+    'dsn': '{}'.format(DSN_URL), # DSN_URL을 위에 적어주셔야 동작합니다.
+    'release': raven.fetch_git_sha(BASE_DIR),
+}
