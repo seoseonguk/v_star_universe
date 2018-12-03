@@ -25,7 +25,7 @@ SECRET_KEY = 'glo#fq8rofpvw_z)mg!9^-_8!ie(50n!2)&+mty9i4y-2(z@6&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['v-star-universe.maij96kpm3.ap-northeast-2.elasticbeanstalk.com','*.elasticbeanstalk.com', '127.0.0.1','*.vstaruniverse.com', 'localhost']
+ALLOWED_HOSTS = ['v-star-universe.maij96kpm3.ap-northeast-2.elasticbeanstalk.com', '127.0.0.1','www.vstaruniverse.com', 'localhost']
 
 
 # Application definition
