@@ -21,11 +21,14 @@ REGION_CHOICES = {
 }
 class Influencer(TimeStampedModel):
     name = models.CharField(max_length=20)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     gender = models.CharField(max_length=5, choices=GENDER_CHOICES)
     region = models.CharField(max_length=10, choices=REGION_CHOICES)
     birth = models.DateField(auto_now_add=True)
     follower = models.IntegerField()
+
+    instagram_id = models.CharField(max_length=30, blank=True)
+    facebook_id = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
         return self.name
@@ -33,3 +36,4 @@ class Influencer(TimeStampedModel):
     class Meta:
         verbose_name = "인플루엔서"
         verbose_name_plural = verbose_name
+        unique_together = ('email', 'instagram_id','facebook_id')
