@@ -27,6 +27,8 @@ class Influencer(TimeStampedModel):
     birth = models.DateField(auto_now_add=True)
     follower = models.IntegerField()
 
+    category = models.ManyToManyField('SubCategory')
+
     instagram_id = models.CharField(max_length=30, blank=True)
     facebook_id = models.CharField(max_length=30, blank=True)
 
@@ -37,3 +39,17 @@ class Influencer(TimeStampedModel):
         verbose_name = "인플루엔서"
         verbose_name_plural = verbose_name
         unique_together = ('email', 'instagram_id','facebook_id')
+
+
+class MainCategory(TimeStampedModel):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return  self.name
+
+class SubCategory(TimeStampedModel):
+    name = models.CharField(max_length=20)
+    main_category = models.ForeignKey(MainCategory, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
