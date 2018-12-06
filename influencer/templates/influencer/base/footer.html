@@ -1,12 +1,42 @@
+{% load socialaccount %}
+
+    {% if user.is_authenticated %}
+    <span>{{ user }}님이 로그인중입니다.</span>
+
+    {% for account in user.socialaccount_set.all %}
+
+     {% comment %} show avatar from url {% endcomment %}
+     <h2 style="text-transform:capitalize;">{{ account.provider }} account data</h2>
+
+     <p><img width="50" height="50" src="{{ account.get_avatar_url }}"/></p>
+
+     <p>UID: <a href="{{ account.extra_data.link }}">{{ account.uid }}</a></p>
+
+     <p>Username: {{ account.extra_data.username }}</p>
+      <p>First Name: {{ account.extra_data.first_name }}</p>
+      <p>Last Name: {{ account.extra_data.last_name }}</p>
+
+      <p>Dashboard Link:
+      <a href="{{ account.extra_data.link }}">{{ account.extra_data.link }}</a></p>
+      {% empty %}
+      <p>you haven't any social account please</p>
+    {% endfor %}
+    {% endif %}
+    <h2><a href="/accounts/logout">로그아웃</a></h2>
+    <h2><a href="/accounts/signup">회원가입</a></h2>
+
+
       <!-- Footer -->
       <footer>
         <ul class="list-inline d-table w-100 mb-0">
           <li class="list-inline-item d-table-cell g-width-1x">
-            <a class="btn btn-lg u-btn-indigo btn-block rounded-0 g-py-20" href="#!"><i class="fa fa-facebook"></i></a>
+            <a class="btn btn-lg u-btn-indigo btn-block rounded-0 g-py-20" href="{% provider_login_url "facebook" %}"><i class="fa fa-facebook"></i></a>
           </li>
           <li class="list-inline-item d-table-cell g-width-1x">
-            <a class="btn btn-lg u-btn-teal btn-block rounded-0 g-py-20" href="#!"><i class="fa fa-instagram"></i></a>
+            <a class="btn btn-lg u-btn-teal btn-block rounded-0 g-py-20" href="{% provider_login_url "instagram" %}"><i class="fa fa-instagram"></i></a>
           </li>
         </ul>
       </footer>
       <!-- End Footer -->
+
+

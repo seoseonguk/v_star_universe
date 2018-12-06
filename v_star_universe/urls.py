@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls import url
+
 from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
 
@@ -34,4 +36,9 @@ urlpatterns = [
     path('api', include(router.urls)),
     path('api/swagger', schema_view),
     path('api/auth', include('rest_framework.urls', namespace='rest_framework'))
+]
+
+urlpatterns += [
+    url(r'^accounts/', include('allauth.urls')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
 ]

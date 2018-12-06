@@ -2,4 +2,6 @@ Django
 django-rest-swagger
 django-storages
 djangorestframework
+django-allauth
+django-rest-auth
 Pillow
