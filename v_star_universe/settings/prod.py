@@ -41,3 +41,9 @@ AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME'] # 필수 지정
 AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME', 'ap-northeast-2')
 
 
+
+
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+LOGIN_REDIRECT_URL = "http://www.vstaruniverse.com/"
+ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
+ACCOUNT_LOGOUT_REDIRECT_URL = "http://www.vstaruniverse.com/"
